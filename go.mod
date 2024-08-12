@@ -1,4 +1,4 @@
-module chat-grpc
+module github.com/MochJuang/chat-grpc
 
 go 1.22.2
 
