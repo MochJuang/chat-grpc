@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package chat;
+
+option go_package = "internal/delivery/grpc/proto;chat";
+
+// The Chat service definition.
+service ChatService {
+  rpc AddMessageToConversation (AddMessageRequest) returns (AddMessageResponse);
+  rpc GetConversationDetails (ConversationRequest) returns (ConversationResponse);
+}
+
+// Request and response messages
+message AddMessageRequest {
+  uint32 conversation_id = 1;
+  uint32 sender_id = 2;
+  string content = 3;
+}
+
+message AddMessageResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ConversationRequest {
+  uint32 conversation_id = 1;
+}
+
+message ConversationResponse {
+  uint32 id = 1;
+  repeated uint32 participant_ids = 2;
+  repeated Message messages = 3;
+  string created_at = 4;
+}
+
+message Message {
+  uint32 id = 1;
+  uint32 sender_id = 2;
+  string content = 3;
+  string created_at = 4;
+}
