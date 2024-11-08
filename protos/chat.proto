@@ -12,8 +12,8 @@ service ChatService {
 
 // Request and response messages
 message AddMessageRequest {
-  uint32 conversation_id = 1;
-  uint32 sender_id = 2;
+  string conversation_id = 1;
+  string sender_id = 2;
   string content = 3;
 }
 
@@ -23,19 +23,19 @@ message AddMessageResponse {
 }
 
 message ConversationRequest {
-  uint32 conversation_id = 1;
+  string conversation_uuid = 1;
 }
 
 message ConversationResponse {
-  uint32 id = 1;
-  repeated uint32 participant_ids = 2;
+  string uuid = 1;
+  repeated string participant_uuids = 2;
   repeated Message messages = 3;
   string created_at = 4;
 }
 
 message Message {
-  uint32 id = 1;
-  uint32 sender_id = 2;
+  string uuid = 1;
+  string sender_id = 2;
   string content = 3;
   string created_at = 4;
 }

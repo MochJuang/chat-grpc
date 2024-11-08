@@ -1,0 +1,1 @@
+protoc --go_out=./../service/chat --go-grpc_out=./../service/chat ./chat.proto
