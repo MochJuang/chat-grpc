@@ -12,8 +12,8 @@ service ChatService {
 
 // Request and response messages
 message AddMessageRequest {
-  string conversation_id = 1;
-  string sender_id = 2;
+  string conversation_uuid = 1;
+  string sender_uuid = 2;
   string content = 3;
 }
 
