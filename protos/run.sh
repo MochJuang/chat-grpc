@@ -1,1 +1,1 @@
-protoc --go_out=./../service/chat --go-grpc_out=./../service/chat ./chat.proto
+protoc --go_out=./../service/chat --go-grpc_out=./../service/chat --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative ./chat.proto
