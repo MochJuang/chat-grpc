@@ -19,7 +19,11 @@ message AddMessageRequest {
 
 message AddMessageResponse {
   bool success = 1;
-  string message = 2;
+  string uuid = 2;
+  string conversation_uuid = 3;
+  string sender_uuid = 4;
+  string message = 5;
+  string sent_at = 6;
 }
 
 message ConversationRequest {
